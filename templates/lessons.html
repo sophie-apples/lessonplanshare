@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Lesson Plans</title>
+</head>
+<body>
+<h1>Lesson Plans</h1>
+    {% for lesson in lessons %}
+
+        <strong>{{ lesson.title }}</strong><br>
+        <em>{{ lesson.level }}<br>
+        {{ lesson.duration }}<br></em>
+        {{ lesson.materials }}<br>
+        {{ lesson.teaching_point }}<br>
+        {{ lesson.main_aims }}<br>
+        {{ lesson.procedure }}<br>
+
+    {% endfor %}
+    
+</body>
+</html>
