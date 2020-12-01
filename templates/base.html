@@ -15,7 +15,7 @@
 <body>
     <header>
     <!-- top nav bar -->
-        <nav class="nav-extended text-shadow yellow accent-3">
+        <nav class="nav-extended text-shadow yellow accent-4">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_lessons') }}" class="brand-logo">Lesson Share</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
@@ -52,7 +52,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="yellow accent-3 center-align white-text text-shadow">{{ message }}</h4>
+                        <h4 class="yellow accent-4 center-align white-text text-shadow">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
