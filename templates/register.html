@@ -2,12 +2,32 @@
 
 {% block content %}
 
+    <h3 class="center-align yellow-text accent-3 text-shadow">Register</h3>
+
     <div class="row">
-        <form class="col s12 m8 offset-m2">
-            <div class="card-panel yellow accent-3">
-                <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-                </span>
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+            <div class="card-panel">
+                <!-- username field -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-plus yellow-text accent-3 text-shadow prefix"></i>
+                        <input id="username" name="username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- password field -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock yellow-text accent-3 text-shadow prefix"></i>
+                        <input id="password" name="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- register button -->
+                <div class="row">
+                    <button class="col s12 btn-large yellow accent-3 text-shadow" type="submit" name="action">
+                        Register</button>
+                </div>
             </div>
         </form>
     </div>
