@@ -5,5 +5,12 @@
 
 .flashes h4 {
     line-height: 2;
+}
 
+.banner {
+    line-height: 2;
+}
+
+body {
+    color: grey;
 }

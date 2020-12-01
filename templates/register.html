@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h3 class="center-align yellow-text accent-3 text-shadow">Register</h3>
+    <h3 class="center-align">Register</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
@@ -37,7 +37,8 @@
     <div class="row">
         <div class="col s12">
             <p class="center-align">
-                <a href="{{ url_for('login') }}" class="yellow-text text-accent-3 text-shadow">Log In</a>
+                Already Registered?
+                <a href="{{ url_for('login') }}" class="yellow-text text-accent-4">Log In</a>
             </p>
         </div>
     </div>
