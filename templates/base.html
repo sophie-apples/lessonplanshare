@@ -21,13 +21,16 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_lessons') }}">Home</a></li>
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="#">Add New Lesson</a></li>
-                        <li><a href="#">Manage Lessons</a></li>
-                        <li><a href="#">Liked Lessons</a></li>
-                        <li><a href="{{ url_for('login') }}">Log In</a></li>
-                        <li><a href="#">Log Out</a></li>
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                        {% if session.user %}
+                            
+                            <li><a href="#">Add New Lesson</a></li>
+                            <li><a href="#">Manage Lessons</a></li>
+                            <li><a href="#">Liked Lessons</a></li>
+                            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                        {% else %}
+                            <li><a href="{{ url_for('login') }}">Log In</a></li>
+                            <li><a href="{{ url_for('register') }}">Register</a></li>
+                        {% endif %}
                     </ul>
             </div>
         </nav>
@@ -36,13 +39,16 @@
         <ul class="sidenav" id="mobile-demo">
             <a href="{{ url_for('get_lessons') }}" class="brand-logo">Lesson Share</a>
             <li><a href="{{ url_for('get_lessons') }}">Home</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="#">Add New Lesson</a></li>
-            <li><a href="#">Manage Lessons</a></li>
-            <li><a href="#">Liked Lessons</a></li>
-            <li><a href="{{ url_for('login') }}">Log In</a></li>
-            <li><a href="#">Log Out</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% if session.user %}
+                
+                <li><a href="#">Add New Lesson</a></li>
+                <li><a href="#">Manage Lessons</a></li>
+                <li><a href="#">Liked Lessons</a></li>
+                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </header>
     
@@ -52,7 +58,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="yellow accent-4 center-align white-text text-shadow">{{ message }}</h4>
+                        <h4 class="yellow accent-4 center-align white-text">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
