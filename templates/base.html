@@ -15,14 +15,13 @@
 <body>
     <header>
     <!-- top nav bar -->
-        <nav class="nav-extended text-shadow yellow accent-4">
-            <div class="nav-wrapper">
-                <a href="{{ url_for('get_lessons') }}" class="brand-logo">Lesson Share</a>
+        <nav class="nav-extended yellow">
+            <a href="{{ url_for('get_lessons') }}" class="grey-text text-darken-2">LESSONS... PLANNED.</a>
+            <div class="nav-wrapper nav-wrapper-padding">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_lessons') }}">Home</a></li>
                         {% if session.user %}
-                            
                             <li><a href="#">Add New Lesson</a></li>
                             <li><a href="#">Manage Lessons</a></li>
                             <li><a href="#">Liked Lessons</a></li>
@@ -33,15 +32,17 @@
                         {% endif %}
                     </ul>
             </div>
+            <div class="nav-content center-align grey-text text-darken-2">
+                <span class="nav-title">SHARE AND DISCOVER EFL LESSON PLANS</span>
+            </div>
         </nav>
 
         <!-- mobile sidenav bar -->
-        <ul class="sidenav" id="mobile-demo">
-            <a href="{{ url_for('get_lessons') }}" class="brand-logo">Lesson Share</a>
-            <li><a href="{{ url_for('get_lessons') }}">Home</a></li>
+        <ul class="sidenav sidenav-padding yellow" id="mobile-demo">
+            <a href="{{ url_for('get_lessons') }}" class="grey-text text-darken-2">LESSONS... PLANNED.</a>
+            <li class="text-white"><a href="{{ url_for('get_lessons') }}">Home</a></li>
             {% if session.user %}
-                
-                <li><a href="#">Add New Lesson</a></li>
+                <li ><a href="#">Add New Lesson</a></li>
                 <li><a href="#">Manage Lessons</a></li>
                 <li><a href="#">Liked Lessons</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -58,7 +59,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div class="row flashes">
-                        <h4 class="yellow accent-4 center-align white-text">{{ message }}</h4>
+                        <h4 class="yellow center-align white-text">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
