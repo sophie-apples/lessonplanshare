@@ -88,7 +88,8 @@ def logout():
 @app.route("/add_lesson")
 def add_lesson():
     level = mongo.db.level.find()
-    return render_template("add_lesson.html", level=level)
+    duration = mongo.db.duration.find()
+    return render_template("add_lesson.html", level=level, duration=duration)
 
 
 if __name__ == "__main__":

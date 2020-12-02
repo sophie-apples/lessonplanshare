@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h3 class="center-align">Add Lesson</h3>
+<h3 class="center-align teal-text text-lighten-1">Add Lesson</h3>
 
 <!-- add lesson form -->
 <div class="row">
@@ -10,41 +10,46 @@
             <!-- text input title -->
             <div class="input-field col s12">
                 <i ></i>
-                <input id="title" name="title" type="text" class="validate" minlength="5" maxlength="20" required>
+                <input id="title" name="title" type="text" class="validate"
+                    minlength="5" maxlength="20" required>
                 <label for="title">Title</label>
             </div>
 
             <!-- text input description -->
             <div class="input-field col s12">
                 <i></i>
-                <input id="description" name="description" type="text" class="validate" minlength="5" maxlength="30" required>
+                <input id="description" name="description" type="text" class="validate" 
+                    minlength="5" maxlength="30" required>
                 <label for="description">Description</label>
             </div>
 
             <!-- duration (dropdown?????) -->
             <div class="input-field col s12">
-                <i class="fas fa-clock yellow-text text-shadow"></i><br>
-                <input id="duration" name="duraion" type="text" class="validate">
-                <label for="duration"></label>
+                <i class="fas fa-clock teal-text text-lighten-1"></i>
+                <select>
+                    {% for duration in duration %}
+                    <option value="1">{{ duration.duration }}</option>
+                    {% endfor %}
+                </select>
+                <label>Duration</label>
             </div>
 
             <!-- text input procedure -->
             <div class="input-field col s12">
-                <i class="fas fa-pen yellow-text text-shadow"></i><br>
-                <textarea id="procedure" name="procedure" class="materialize-textarea" minlength="5" maxlength="500" required></textarea>
+                <i class="fas fa-pen teal-text text-lighten-1"></i><br>
+                <textarea id="procedure" name="procedure" class="materialize-textarea"
+                    minlength="5" maxlength="500" required></textarea>
                 <label for="procedure">Procedure</label>
             </div>
 
-            <!-- radio buttons student level -->
-            <div class="col s12">
-                {% for level in level %}
-                    <p>
-                        <label>
-                            <input name="group1" type="radio" checked />
-                            <span>{{ level.level }}</span>
-                        </label>
-                    </p>
-                {% endfor %}
+            <!-- multiple select student level -->
+            <div class="input-field col s12">
+                <select multiple>
+                    {% for level in level %}
+                    <option value="1">{{ level.level }}</option>
+                    {% endfor %}
+                </select>
+                <label>Class Level</label>
             </div>
 
         </div>

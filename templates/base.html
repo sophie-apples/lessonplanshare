@@ -16,7 +16,7 @@
     <header>
     <!-- top nav bar -->
         <nav class="nav-extended yellow">
-            <a href="{{ url_for('get_lessons') }}" class="grey-text text-darken-2">LESSONS... PLANNED.</a>
+            <a href="{{ url_for('get_lessons') }}" class="teal-text text-lighten-1">LESSONS... PLANNED.</a>
             <div class="nav-wrapper nav-wrapper-padding">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
@@ -32,14 +32,14 @@
                         {% endif %}
                     </ul>
             </div>
-            <div class="nav-content center-align grey-text text-darken-2">
+            <div class="nav-content center-align teal-text text-lighten-1">
                 <span class="nav-title">SHARE AND DISCOVER EFL LESSON PLANS</span>
             </div>
         </nav>
 
         <!-- mobile sidenav bar -->
         <ul class="sidenav sidenav-padding yellow" id="mobile-demo">
-            <a href="{{ url_for('get_lessons') }}" class="grey-text text-darken-2">LESSONS... PLANNED.</a>
+            <a href="{{ url_for('get_lessons') }}" class="teal-text text-lighten-1">LESSONS... PLANNED.</a>
             <li class="text-white"><a href="{{ url_for('get_lessons') }}">Home</a></li>
             {% if session.user %}
                 <li ><a href="{{ url_for('add_lesson') }}">Add New Lesson</a></li>
