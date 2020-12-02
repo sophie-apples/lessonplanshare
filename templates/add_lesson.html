@@ -5,8 +5,9 @@
 
 <!-- add lesson form -->
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" method="POST" action="{{ url_for('add_lesson') }}">
         <div class="row">
+
             <!-- text input title -->
             <div class="input-field col s12">
                 <i ></i>
@@ -48,10 +49,19 @@
                     minlength="5" maxlength="500" required></textarea>
                 <label for="procedure" class="teal-text text-lighten-1">Procedure</label>
             </div>
+
             <!-- materials -->
             <div class="input-field col s12">
                 <input id="materials" name="materials">
                 <label for="materials" class="teal-text text-lighten-1">Materials</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large yellow teal-text text-lighten-1">
+                Add Lesson
+                </button>
             </div>
         </div>
     </form>
