@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 class="center-align">Add Lesson</h3>
+
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i ></i>
+                <input id="lesson_title" type="text" class="validate">
+                <label for="lesson_title">Title</label>
+            </div>
+            <div class="input-field col s12">
+                <i></i>
+                <input id="lesson_description" type="text" class="validate">
+                <label for="lesson_description">Description</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="fas fa-clock yellow-text text-shadow"></i>
+                <input id="lesson_duration" type="text" class="validate">
+                <label for="lesson_duration">Duration</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="fas fa-pen yellow-text text-shadow"></i>
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Procedure</label>
+            </div>
+
+        </div>
+    </form>
+</div>
+{% endblock %}

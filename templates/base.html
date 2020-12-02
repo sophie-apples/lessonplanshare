@@ -22,7 +22,7 @@
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_lessons') }}">Home</a></li>
                         {% if session.user %}
-                            <li><a href="#">Add New Lesson</a></li>
+                            <li><a href="{{ url_for('add_lesson') }}">Add New Lesson</a></li>
                             <li><a href="#">Manage Lessons</a></li>
                             <li><a href="#">Liked Lessons</a></li>
                             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -42,7 +42,7 @@
             <a href="{{ url_for('get_lessons') }}" class="grey-text text-darken-2">LESSONS... PLANNED.</a>
             <li class="text-white"><a href="{{ url_for('get_lessons') }}">Home</a></li>
             {% if session.user %}
-                <li ><a href="#">Add New Lesson</a></li>
+                <li ><a href="{{ url_for('add_lesson') }}">Add New Lesson</a></li>
                 <li><a href="#">Manage Lessons</a></li>
                 <li><a href="#">Liked Lessons</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
