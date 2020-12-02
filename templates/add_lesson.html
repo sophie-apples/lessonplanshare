@@ -19,18 +19,15 @@
             <!-- text input description -->
             <div class="input-field col s12">
                 <input id="description" name="description" type="text" class="validate" 
-                    minlength="5" maxlength="30" required>
+                    minlength="5" maxlength="100" required>
                 <label for="description" class="teal-text text-lighten-1">Description</label>
             </div>
 
-            <!-- duration dropdown -->
+            <!-- duration -->
             <div class="input-field col s12">
-                <i class="fas fa-clock teal-text text-lighten-1"></i>
-                <select>
-                    {% for duration in duration %}
-                    <option value="1">{{ duration.duration }}</option>
-                    {% endfor %}
-                </select>
+                <input id="duration" name="duration" type="text" class="validate" 
+                    minlength="1" maxlength="3" required>
+                <label for="duration" class="teal-text text-lighten-1">Duration(mins)</label>
             </div>
 
             <!-- multiple select student level -->
@@ -48,12 +45,6 @@
                 <textarea id="procedure" name="procedure" class="materialize-textarea"
                     minlength="5" maxlength="500" required></textarea>
                 <label for="procedure" class="teal-text text-lighten-1">Procedure</label>
-            </div>
-
-            <!-- materials -->
-            <div class="input-field col s12">
-                <input id="materials" name="materials">
-                <label for="materials" class="teal-text text-lighten-1">Materials</label>
             </div>
 
         </div>

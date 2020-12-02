@@ -85,8 +85,21 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_lesson")
+@app.route("/add_lesson", methods=["GET", "POST"])
 def add_lesson():
+    if request.method == "POST":
+        lesson = {
+            "title": request.form.get("title"),
+            "description": request.form.get("description"),
+            "duration": request.form.get("duration"),
+            "level": request.form.getlist("level"),
+            "procedure": request.form.getlist("procedure"),
+            "created_by": session["user"]
+        }
+        mongo.db.lessons.insert_one(lesson)
+        flash("Lesson Successfully Added")
+        return redirect(url_for("get_lessons"))
+        
     level = mongo.db.level.find()
     duration = mongo.db.duration.find()
     return render_template("add_lesson.html", level=level, duration=duration)
