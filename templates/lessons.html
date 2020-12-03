@@ -9,9 +9,11 @@
                     <div class="card-content white">
                         <span class="card-title"><strong>{{ lesson.title }}</strong></span>
                             <em>{{ lesson.description }}</em><br>
-                            <strong>{{ lesson.duration }}</strong><br>
+                            <strong>{{ lesson.duration }}mins</strong><br>
                             <br>
                             <p>{{ lesson.procedure }}<br></p>
+                            <br>
+                            <p><em>Added by: </em>{{ lesson.created_by }}</p>
                     </div>
                     <div class="card-action yellow white-text">
                         <a class="" href="#">{{ lesson.materials }}</a>

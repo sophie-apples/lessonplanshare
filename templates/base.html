@@ -16,8 +16,7 @@
     <header>
     <!-- top nav bar -->
         <nav class="nav-extended yellow">
-            <a href="{{ url_for('get_lessons') }}" class="teal-text text-lighten-1">LESSONS... PLANNED.</a>
-            <div class="nav-wrapper nav-wrapper-padding">
+            <div class="nav-wrapper nav-wrapper-padding text-shadow">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ url_for('get_lessons') }}">Home</a></li>
@@ -32,8 +31,8 @@
                         {% endif %}
                     </ul>
             </div>
-            <div class="nav-content center-align teal-text text-lighten-1">
-                <span class="nav-title">SHARE AND DISCOVER EFL LESSON PLANS</span>
+            <div class="nav-content center-align">
+                <span class="nav-title"><a href="{{ url_for('get_lessons') }}" class="grey-text text-darken-2">SHARE AND DISCOVER EFL LESSON PLANS</a></span>
             </div>
         </nav>
 
@@ -52,7 +51,6 @@
             {% endif %}
         </ul>
     </header>
-    
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -65,12 +63,12 @@
             {% endif %}
         {% endwith %}
     </section>
-
+        
     <main class="container">
+
         {% block content %}
         {% endblock %}
     </main>
-
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
