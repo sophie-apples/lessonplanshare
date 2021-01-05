@@ -92,7 +92,7 @@ def add_lesson():
             "title": request.form.get("title"),
             "description": request.form.get("description"),
             "duration": request.form.get("duration"),
-            "level": request.form.getlist("level"),
+            "level": request.form.get("level"),
             "procedure": request.form.get("procedure"),
             "created_by": session["user"]
         }
@@ -100,9 +100,7 @@ def add_lesson():
         flash("Lesson Successfully Added")
         return redirect(url_for("get_lessons"))
 
-    level = mongo.db.level.find()
-    duration = mongo.db.duration.find()
-    return render_template("add_lesson.html", level=level, duration=duration)
+    return render_template("add_lesson.html")
 
 
 if __name__ == "__main__":

@@ -14,14 +14,15 @@ body {
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
-#index-banner {
-    max-height: 200px;
+.card.small .card-image+.card-content, .card.medium .card-image+.card-content, .card.large .card-image+.card-content {
+    max-height: 80%;
 }
 
-.parralax-container {
-  
+.title-border {
+    padding: 25px;
+    height: 50%;
 }
 
-body {
-    background-image: "static/images/pencils.jpg";
+.header-details {
+    text-align: right;
 }

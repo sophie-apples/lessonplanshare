@@ -10,7 +10,6 @@
 
             <!-- text input title -->
             <div class="input-field col s12">
-                <i ></i>
                 <input id="title" name="title" type="text" class="validate"
                     minlength="5" maxlength="50" required>
                 <label for="title" class="teal-text text-lighten-1">Title</label>
@@ -30,13 +29,10 @@
                 <label for="duration" class="teal-text text-lighten-1">Duration(mins)</label>
             </div>
 
-            <!-- multiple select student level -->
+            <!-- select student level -->
             <div class="input-field col s12">
-                <select multiple>
-                    {% for level in level %}
-                    <option value="1">{{ level.level }}</option>
-                    {% endfor %}
-                </select>
+                <input id="level" name="duration" type="text" class="validate" 
+                    minlength="1" maxlength="25" required>
                 <label class="teal-text text-lighten-1">Class Level</label>
             </div>
 

@@ -2,32 +2,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-    
-    <div class="row">
-        {% for lesson in lessons %}
-        <div class="col s12 m6 l4">
-            <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="static/images/pencilsedit.jpg">
+    {% for lesson in lessons %}
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header yellow">
+                    <div>
+                        <i class="fab fa-leanpub"></i>
+                        <strong>{{ lesson.title }}</strong><br>
+                        <p>{{ lesson.level }}: {{ lesson.duration }}mins. </p>
+                    </div>
                 </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4"><strong>{{ lesson.title }}</strong><br>
-                        <em>{{ lesson.description }}</em><br>
-                        {{ lesson.duration }}mins<br>
-                        <i class="material-icons right fas fa-plus"></i></span><br>
-                        <br>
-                        <em>Added by: </em>{{ lesson.created_by }}
-                        
-                    <p><a href="#">{{ lesson.materials }}</a></p>
+                <div class="collapsible-body">
+                    <div>
+                        <strong>{{ lesson.description }}</strong><br>
+                        {{ lesson.procedure }}<br>
+                        <em>Added by: {{ lesson.created_by }} </em>
+                    </div>
                 </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">{{ lesson.title }}<i class="material-icons right fas fa-times"></i></span>
-                    <p>{{ lesson.procedure }}</p>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+            </li>
+        </ul>
+    {% endfor %}
 
-    
 {% endblock %}
